@@ -20,6 +20,12 @@ export const QuestionBlock: React.FC<IQuestionBlock> = ({
     (answer) => answer.questionId === questionId
   )?.answer;
 
+  const getButtonClassName = (optionText: string) => {
+    return optionText === currentAnswer
+      ? ButtonClassName.Active
+      : ButtonClassName.Base;
+  };
+
   return (
     <div className="question-block-wrapper">
       <Question questionText={questionText} additionalText={additionalText} />
@@ -28,11 +34,7 @@ export const QuestionBlock: React.FC<IQuestionBlock> = ({
           <Button
             key={`${idBase}-${index}`}
             innerText={option.text}
-            className={
-              option.text === currentAnswer
-                ? ButtonClassName.Active
-                : ButtonClassName.Base
-            }
+            className={getButtonClassName(option.text)}
             onClick={() => onClick(option)}
           />
         ))}

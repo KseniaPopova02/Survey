@@ -5,13 +5,14 @@ import WhiteNebulaLogo from '@/assets/nebula-white-logo.svg';
 import { usePathname, useRouter } from 'next/navigation';
 import { ArrowBack } from '@/components';
 import './styles.css';
+import { SURVEY_PATHS } from '@/routes';
 
 export const Header = () => {
   const router = useRouter();
   const pathname = usePathname();
-  const isBackButtonVisible = pathname !== '/question/gender-selection';
+  const isBackButtonVisible = pathname !== SURVEY_PATHS.GENDER_SELECTION;
   const Logo =
-    pathname === '/question/how-it-work' ? WhiteNebulaLogo : NebulaLogo;
+    pathname === SURVEY_PATHS.HOW_IT_WORK ? WhiteNebulaLogo : NebulaLogo;
 
   const onBackClick = () => {
     router.back();
