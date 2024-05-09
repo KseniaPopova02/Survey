@@ -1,7 +1,7 @@
 'use client';
 import { usePathname, useRouter } from 'next/navigation';
 import { QuestionBlock } from '@/modules';
-import { IOption } from '@/generalTypes';
+import { IOption, QuestionId } from '@/generalTypes';
 import { useAppDispatch, setAnswer, useAppSelector } from '@/Redux';
 import { useEffect, useState } from 'react';
 import { IQuestionPage } from './types';
@@ -45,14 +45,16 @@ const QuestionPage: React.FC<IQuestionPage> = ({ question }) => {
       router.push(SURVEY_PATHS.END);
     } else if (option.next === 'handleDynamicRouting') {
       const overthinkAnswerObj = answers.find(
-        (answer) => answer.questionId === 'overthink'
+        (answer) => answer.questionId === QuestionId.Overthink
       );
       const overthinkAnswer = overthinkAnswerObj
         ? overthinkAnswerObj.answer
         : null;
 
       const dynamicRoute =
-        overthinkAnswer === 'Yes' ? 'important-to-you' : 'emotional-control';
+        overthinkAnswer === 'Yes'
+          ? QuestionId.ImportantToYou
+          : QuestionId.EmotionalControl;
       router.push(`${SURVEY_PATHS.BASE}/${dynamicRoute}`);
     } else if (option.next) {
       router.push(`${SURVEY_PATHS.BASE}/${option.next}`);
