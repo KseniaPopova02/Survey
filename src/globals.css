@@ -1,0 +1,85 @@
+@import 'normalize.css';
+@import './variables.css';
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('./fonts/OpenSans-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('./fonts/OpenSans-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+body {
+  background-color: var(--background-body);
+  font-family: 'OpenSans', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--text-primary);
+}
+
+h1 {
+  font-weight: 700;
+  margin: 0px;
+  font-size: 24px;
+}
+
+.container {
+  padding: 14.5px 22.5px;
+}
+
+.base-button {
+  padding: 22px;
+  border-radius: 16px;
+  border: solid var(--border-color) 1px;
+  color: var(--black);
+  background-color: var(--background-button);
+  box-shadow: 2px 2px 6px 0 var(--shadow-color);
+  cursor: pointer;
+  font-size: 14px;
+  text-align: center;
+  transition:
+    background-color 0.3s ease,
+    color 0.5s ease,
+    box-shadow 0.3s ease;
+}
+
+.base-button:hover {
+  color: var(--color-hover);
+  background-image: linear-gradient(
+    var(--gradient-start),
+    var(--gradient-middle1),
+    var(--gradient-middle2),
+    var(--gradient-end)
+  );
+  box-shadow: 4px 4px 10px 0 var(--shadow-hover-color);
+}
+
+.base-button-active {
+  color: var(--color-hover);
+  background-image: linear-gradient(
+    var(--gradient-start),
+    var(--gradient-middle1),
+    var(--gradient-middle2),
+    var(--gradient-end)
+  );
+  box-shadow: 4px 4px 10px 0 var(--shadow-hover-color);
+}
+
+.how-it-work {
+  background-image: linear-gradient(
+    var(--gradient-start),
+    var(--gradient-middle1),
+    var(--gradient-middle2),
+    var(--gradient-end)
+  );
+  color: #fff;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}

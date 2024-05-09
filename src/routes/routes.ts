@@ -1,0 +1,20 @@
+export const SURVEY_PATHS = {
+  BASE: '/question',
+  GENDER_SELECTION: '/question/gender-selection',
+  RELATIONSHIP_STATUS: '/question/relationship-status',
+  SINGLE_PARENT: '/question/single-parent',
+  SINGLE_RELATIONSHIP_SELF_ASSESSMENT:
+    '/question/single-relationship-self-assessment',
+  OVERTHINK: '/question/overthink',
+  IMPORTANT_TO_YOU: '/question/important-to-you',
+  EMOTIONAL_CONTROL: '/question/emotional-control',
+  PARENT: '/question/parent',
+  RELATIONSHIP_SELF_ASSESSMENT: '/question/relationship-self-assessment',
+  PARTNER_INTROVERT_EXTROVERT: '/question/partner-introvert-extrovert',
+  PARTNER_GENDER: '/question/partner-gender',
+  PARTNER_PRIORITY: '/question/partner-priority',
+  RELATIONSHIP_GOAL: '/question/relationship-goal',
+  ABOUT_US: '/question/about-us',
+  HOW_IT_WORK: '/question/how-it-work',
+  END: '/end',
+};
