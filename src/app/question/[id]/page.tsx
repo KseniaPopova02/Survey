@@ -1,6 +1,6 @@
 import React from 'react';
 import ClientQuestionPage from '../../../pages/QuestionPage/QuestionPage';
-import questions from '@/survey-config.json';
+import { questions } from '@/survey-config';
 import { IPage } from './types';
 
 export async function generateStaticParams() {

@@ -46,7 +46,7 @@ export type QuestionType =
   | undefined;
 
 export interface IQuestion {
-  id: string;
+  id: QuestionId;
   question: string;
   options: IOption[];
   variables?: string[];
@@ -54,6 +54,6 @@ export interface IQuestion {
 }
 
 export interface IAnswer {
-  questionId: string;
+  questionId: QuestionId;
   answer: string;
 }

@@ -13,7 +13,6 @@ import { IOption } from '@/generalTypes';
 const QuestionPage: React.FC<IQuestionPage> = ({ question }) => {
   const dispatch = useAppDispatch();
   const answers = useAppSelector((state) => state.survey.answers);
-  console.log(answers);
 
   const pathname = usePathname();
   useSpecialPageEffect(pathname);

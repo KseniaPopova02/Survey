@@ -1,8 +1,5 @@
-export interface Answer {
-  questionId: string;
-  answer: string;
-}
+import { IAnswer } from '@/generalTypes';
 
 export type TInitialStateSurvey = {
-  answers: Answer[];
+  answers: IAnswer[];
 };
