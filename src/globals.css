@@ -27,6 +27,11 @@ h1 {
   font-weight: 700;
   margin: 0px;
   font-size: 24px;
+  text-transform: lowercase;
+}
+
+h1::first-letter {
+  text-transform: uppercase;
 }
 
 .container {
