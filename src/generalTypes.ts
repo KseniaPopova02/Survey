@@ -52,3 +52,8 @@ export interface IQuestion {
   variables?: string[];
   additionalText?: string;
 }
+
+export interface IAnswer {
+  questionId: string;
+  answer: string;
+}

@@ -2,8 +2,8 @@ import { Button, Question } from '@/components';
 import { IQuestionBlock } from './types';
 import './styles.css';
 import { useId } from 'react';
-import { useAppSelector } from '@/Redux';
-import { ButtonClassName } from '@/generalTypes';
+import { getButtonClassName } from './helpers';
+import { useCurrentAnswer } from './hooks';
 
 export const QuestionBlock: React.FC<IQuestionBlock> = ({
   questionText,
@@ -13,18 +13,7 @@ export const QuestionBlock: React.FC<IQuestionBlock> = ({
   questionId,
 }) => {
   const idBase = useId();
-
-  const answers = useAppSelector((state) => state.survey.answers);
-
-  const currentAnswer = answers.find(
-    (answer) => answer.questionId === questionId
-  )?.answer;
-
-  const getButtonClassName = (optionText: string) => {
-    return optionText === currentAnswer
-      ? ButtonClassName.Active
-      : ButtonClassName.Base;
-  };
+  const currentAnswer = useCurrentAnswer(questionId);
 
   return (
     <div className="question-block-wrapper">
@@ -34,7 +23,7 @@ export const QuestionBlock: React.FC<IQuestionBlock> = ({
           <Button
             key={`${idBase}-${index}`}
             innerText={option.text}
-            className={getButtonClassName(option.text)}
+            className={getButtonClassName(option.text, currentAnswer)}
             onClick={() => onClick(option)}
           />
         ))}

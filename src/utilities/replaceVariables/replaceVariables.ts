@@ -1,4 +1,4 @@
-import { IAnswer } from './types';
+import { IAnswer } from '@/generalTypes';
 import { IQuestion, QuestionId } from '@/generalTypes';
 
 export const replaceVariables = (
