@@ -1,5 +1,5 @@
 import React from 'react';
-import ClientQuestionPage from '../../../pages/QuestionPage/QuestionPage';
+import ClientQuestionPage from '@/appPages';
 import { questions } from '@/survey-config';
 import { IPage } from './types';
 

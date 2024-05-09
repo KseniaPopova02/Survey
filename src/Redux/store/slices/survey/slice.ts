@@ -1,7 +1,6 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { TInitialStateSurvey } from './types';
-import { QuestionId } from '@/generalTypes';
-import { IAnswer } from '@/generalTypes';
+import { QuestionId, IAnswer } from '@/generalTypes';
 
 const initialState: TInitialStateSurvey = {
   answers: [],
