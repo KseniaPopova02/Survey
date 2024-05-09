@@ -1,25 +1,17 @@
 'use client';
 
-import NebulaLogo from '@/assets/nebula-logo.svg';
-import WhiteNebulaLogo from '@/assets/nebula-white-logo.svg';
-import { usePathname, useRouter } from 'next/navigation';
-import { ArrowBack } from '@/components';
+import { useRouter } from 'next/navigation';
+import { Arrow } from '@/components';
 import './styles.css';
-import { SURVEY_PATHS } from '@/routes';
+import { useBackButtonVisibility, useLogo } from './hooks';
 
 export const Header = () => {
   const router = useRouter();
-  const pathname = usePathname();
-  const isBackButtonVisible = pathname !== SURVEY_PATHS.GENDER_SELECTION;
-  const Logo =
-    pathname === SURVEY_PATHS.HOW_IT_WORK ? WhiteNebulaLogo : NebulaLogo;
-
-  const onBackClick = () => {
-    router.back();
-  };
+  const isBackButtonVisible = useBackButtonVisibility();
+  const Logo = useLogo();
 
   const backButton = isBackButtonVisible ? (
-    <ArrowBack onClick={onBackClick} />
+    <Arrow onClick={() => router.back()} />
   ) : (
     <div className="invisible-div"></div>
   );

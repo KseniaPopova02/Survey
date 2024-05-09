@@ -1,3 +1,3 @@
-export * from './ArrowBack';
+export * from './Arrow';
 export * from './Button';
 export * from './Question';

@@ -1,9 +1,9 @@
-.arrow-back {
+.arrow {
   cursor: pointer;
   transition: transform 0.3s ease-in-out;
   transform-origin: center;
 }
 
-.arrow-back:hover {
+.arrow:hover {
   transform: scale(1.6);
 }
