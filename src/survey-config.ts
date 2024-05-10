@@ -1,4 +1,4 @@
-import { QuestionId } from './generalTypes';
+import { QuestionId, SurveyVariables } from './generalTypes';
 
 export const questions = [
   {
@@ -46,7 +46,7 @@ export const questions = [
       { text: 'I’ve never been in a relationship', next: 'overthink' },
     ],
 
-    variables: ['gender', 'who have children'],
+    variables: [SurveyVariables.Gender, SurveyVariables.WhoHaveChildren],
   },
   {
     id: QuestionId.Overthink,
@@ -111,7 +111,7 @@ export const questions = [
         next: 'partner-introvert-extrovert',
       },
     ],
-    variables: ['Gender', 'who have children'],
+    variables: [SurveyVariables.Gender, SurveyVariables.WhoHaveChildren],
   },
   {
     id: QuestionId.PartnerIntrovertExtrovert,

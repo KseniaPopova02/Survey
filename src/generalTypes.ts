@@ -9,6 +9,11 @@ export interface IRootLayout {
   children: ReactNode;
 }
 
+export enum SurveyVariables {
+  Gender = 'gender',
+  WhoHaveChildren = 'who have children',
+}
+
 export enum QuestionId {
   GenderSelection = 'gender-selection',
   RelationshipStatus = 'relationship-status',
@@ -40,7 +45,7 @@ export type QuestionType =
         text: string;
         next?: string;
       }[];
-      variables?: string[];
+      variables?: SurveyVariables[];
       additionalText?: string;
     }
   | undefined;
@@ -49,7 +54,7 @@ export interface IQuestion {
   id: QuestionId;
   question: string;
   options: IOption[];
-  variables?: string[];
+  variables?: SurveyVariables[];
   additionalText?: string;
 }
 
