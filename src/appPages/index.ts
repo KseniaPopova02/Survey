@@ -1,1 +1,2 @@
-export { default } from './QuestionPage';
+export * from './QuestionPage';
+export * from './EndPage';

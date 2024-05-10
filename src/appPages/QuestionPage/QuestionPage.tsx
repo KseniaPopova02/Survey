@@ -3,15 +3,15 @@ import { usePathname } from 'next/navigation';
 import { QuestionBlock } from '@/modules';
 import { useAppDispatch, useAppSelector, setAnswer } from '@/Redux';
 import {
-  usePageReloadRedirect,
   useQuestionState,
   useSpecialPageEffect,
   useSurveyRouting,
 } from './hooks';
 import { IQuestionPage } from './types';
 import { IOption } from '@/generalTypes';
+import { usePageReloadRedirect } from '@/hooks';
 
-const QuestionPage: React.FC<IQuestionPage> = ({ question }) => {
+export const QuestionPage: React.FC<IQuestionPage> = ({ question }) => {
   usePageReloadRedirect();
 
   const dispatch = useAppDispatch();
@@ -42,5 +42,3 @@ const QuestionPage: React.FC<IQuestionPage> = ({ question }) => {
     />
   );
 };
-
-export default QuestionPage;

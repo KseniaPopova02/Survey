@@ -1,5 +1,5 @@
 import React from 'react';
-import ClientQuestionPage from '@/appPages';
+import { QuestionPage } from '@/appPages';
 import { questions } from '@/survey-config';
 import { IPage } from './types';
 
@@ -11,7 +11,7 @@ export async function generateStaticParams() {
   return paths;
 }
 
-const Page: React.FC<IPage> = ({ params }) => {
+const SurveyPage: React.FC<IPage> = ({ params }) => {
   const { id } = params;
   const question = questions.find((q) => q.id === id);
 
@@ -21,9 +21,9 @@ const Page: React.FC<IPage> = ({ params }) => {
 
   return (
     <div>
-      <ClientQuestionPage question={question} />
+      <QuestionPage question={question} />
     </div>
   );
 };
 
-export default Page;
+export default SurveyPage;
