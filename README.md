@@ -2,6 +2,12 @@
 
 This is a survey application built with Next.js, React, and Redux Toolkit. It allows for dynamic survey generation and is designed to be both scalable and maintainable.
 
+## System Requirements
+
+Ensure you have the following installed to run this application:
+
+- Node.js v20.11.1 or higher. The application is developed with Node.js 20.11.1, so using this version or newer will ensure full compatibility.
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
