@@ -10,24 +10,36 @@ export const useSurveyRouting = (
 ) => {
   const router = useRouter();
 
+  const navigateToEnd = () => {
+    router.push(SURVEY_PATHS.END);
+  };
+
+  const handleDynamicRouting = () => {
+    const overthinkAnswerObj = answers.find(
+      (answer) => answer.questionId === QuestionId.Overthink
+    );
+    const overthinkAnswer = overthinkAnswerObj
+      ? overthinkAnswerObj.answer
+      : null;
+    const dynamicRoute =
+      overthinkAnswer === 'Yes'
+        ? QuestionId.ImportantToYou
+        : QuestionId.EmotionalControl;
+    router.push(`${SURVEY_PATHS.BASE}/${dynamicRoute}`);
+  };
+
+  const navigateToNext = (nextRoute: string) => {
+    router.push(`${SURVEY_PATHS.BASE}/${nextRoute}`);
+  };
+
   const handleOptionClick = (option: IOption) => {
     handleSetAnswer(option);
     if (option.next === 'end') {
-      router.push(SURVEY_PATHS.END);
+      navigateToEnd();
     } else if (option.next === 'handleDynamicRouting') {
-      const overthinkAnswerObj = answers.find(
-        (answer) => answer.questionId === QuestionId.Overthink
-      );
-      const overthinkAnswer = overthinkAnswerObj
-        ? overthinkAnswerObj.answer
-        : null;
-      const dynamicRoute =
-        overthinkAnswer === 'Yes'
-          ? QuestionId.ImportantToYou
-          : QuestionId.EmotionalControl;
-      router.push(`${SURVEY_PATHS.BASE}/${dynamicRoute}`);
+      handleDynamicRouting();
     } else if (option.next) {
-      router.push(`${SURVEY_PATHS.BASE}/${option.next}`);
+      navigateToNext(option.next);
     }
   };
 
