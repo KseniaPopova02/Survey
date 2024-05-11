@@ -37,19 +37,6 @@ export enum ButtonClassName {
   Active = 'base-button-active base-button',
 }
 
-export type QuestionType =
-  | {
-      id: QuestionId;
-      question: string;
-      options: {
-        text: string;
-        next?: string;
-      }[];
-      variables?: SurveyVariables[];
-      additionalText?: string;
-    }
-  | undefined;
-
 export interface IQuestion {
   id: QuestionId;
   question: string;
