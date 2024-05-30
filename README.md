@@ -49,4 +49,4 @@ npm run prod
 
 This script first builds the production application with npm run build and then starts it with npm run start. The production build includes optimization for the best performance at scale.
 
-### Thank you for the interesting task and for your time. Looking forward to your feedback!
+
